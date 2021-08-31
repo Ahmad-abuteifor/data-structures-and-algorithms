@@ -8,20 +8,24 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
+     
 const addOne = (arr) => {
   // Solution code here...
 let number=[1,2,3,4,5]
+
+let newNumber=[]
+
 number.forEach(item =>{
+
 
 item=item+1
 
-console.log(item);
-
+newNumber.push(item)
+// console.log(newNumber);
 });
+return
 }
-
 addOne()
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -34,16 +38,21 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 const addExclamation = (arr) => {
   // Solution code here...
 
-  // let randomNumber=[1,5,3,6,9,8]
-  arr.forEach(item =>{
+  let wardArr=['hi', 'how', 'are', 'you']
+  let  newWordArr=[]
+  wardArr.forEach(item =>{
 
 item=item+"!"
 
-console.log(item);
+newWordArr.push(item)
+
 
 });
+console.log(newWordArr);
+
+return
 };
-addExclamation ([1,5,3,6,9,8])
+addExclamation ()
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -53,17 +62,24 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-   
-  // let names=["ahmad","essam","naser","amaar"]
-  arr.forEach(item=>{
-item=  item.toUpperCase()
-  console.log( item);
+  let newNames=[]
 
+  let names=["ahmad","essam","naser","amaar"]
+
+  names.forEach(item=>{
+
+item=  item.toUpperCase()
+
+
+newNames.push(item)
+ 
+// console.log(newNames);
 })
+return
 
   // Solution code here...
 };
-allUpperCase (["ahmad","essam","naser","amaar"])
+allUpperCase ()
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -76,25 +92,26 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // let theWord=["hello there "]
+  // let singleWord=["hello there "]
   word.forEach(item=>{
+    let newsingleWord=[]
     item=item.toUpperCase()+"!"
-    console.log(item);
+
+    newsingleWord.push(item)
+console.log(newsingleWord);
+
   })
+  return
     // Solution code here...
   };
   greeting(["hello there "])
 
 
 const speaker = (words, callback) => {
-
-  
   words.forEach(item=>{
-item=item.toUpperCase()
-console.log(item);
-
-
+    
   })
+
   // Solution code here...
 };
 
