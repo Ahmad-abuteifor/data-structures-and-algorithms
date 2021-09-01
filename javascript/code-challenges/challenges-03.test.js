@@ -8,14 +8,13 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
 
-  let array=[1, 2, 4]
-  array.filter((value)=>{
-    return value=value+1
+  // let array=[1, 2, 4]
+ const number =arr.filter((item)=>{
+    return item=item+2
   })
-  console.log(array);
+  return number
   // Solution code here...
 };
-addTwo()
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -25,14 +24,14 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  let array=[1,"batat",3]
-  const number=array.filter((item,i)=>{
+  // let array=[1,"batat",3]
+  const number=arr.filter((item,i)=>{
     return   (!isNaN(item)); 
   })
-  console.log(number);
+   return number
+  // console.log(number);
  };
 
- typeNum()
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -41,17 +40,17 @@ Write a function named containsAnd that, given an array of strings as input, use
 
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
+
 const containsAnd = (arr) => {
 
-  let andArray=['panda', 'ran', 'and']
+  // let andArray=['panda', 'ran', 'and']
 
-  const filterAnd=andArray.filter(item=>item.includes('and'))
+  const filterAnd=arr.filter(item=>item.includes('and'))
     
-    console.log(filterAnd);
-  
+//  console.log(filterAnd)  
   // Solution code here...
+   return filterAnd
 };
-containsAnd ()
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -60,27 +59,30 @@ Write a function named oddValues that, given an array of integers as input, uses
 
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
-
 const oddValues = (arr) => {
   // Solution code here...
-  let oddAray=[1,2,3]
+  // let oddAray=[1,2,3]
 
-  const odds=oddAray.filter(item=>item%2)
-  console.log(odds);
+  const odds=arr.filter(item=>item%2)
+return odds
+
 };
-oddValues()
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
 Write a function named notInFirstArray that, given two arrays as input, uses filter to return an array of all the elements in the second array that are not included in the first array.
 
-For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
+// For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
-};
+ forbiddenValues=forbiddenValues.filter((item) =>{
+   !arr.includes(item)})
 
+  return forbiddenValues
+  // console.log(notInf)
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
