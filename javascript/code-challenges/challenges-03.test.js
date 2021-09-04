@@ -7,14 +7,14 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-
-  // let array=[1, 2, 4]
- const number =arr.filter((item)=>{
-    return item=item+2
-  })
-  return number
-  // Solution code here...
-};
+  let newAray=[]
+    // let array=[1, 2, 4]
+   const number =arr.filter((item)=>{
+     newAray.push(item+2) 
+    })
+    return newAray
+    // Solution code here...
+  };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -77,11 +77,13 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
- forbiddenValues=forbiddenValues.filter((item) =>{
-   !arr.includes(item)})
 
-  return forbiddenValues
-  // console.log(notInf)
+
+let notIn=arr.filter(number=> !forbiddenValues.includes(number)) 
+
+return notIn 
+
+
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
