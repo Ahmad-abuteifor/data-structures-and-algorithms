@@ -22,8 +22,8 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
- const upperArray= arr.sort(upper)
- const lowerArray=arr.sort(lower)
+ const upperArray= arr.sort(callback)
+ const lowerArray=arr.sort(callback)
 
   return [upperArray,lowerArray];
 
