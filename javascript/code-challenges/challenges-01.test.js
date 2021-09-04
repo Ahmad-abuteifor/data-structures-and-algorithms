@@ -42,15 +42,16 @@ console.log(addOne([1, 2, 3, 4, 5]))
 
 
 
+
 const addExclamation = (arr) => {
   // Solution code here...
 let newArray=[]
-  // let randomNumber=[1,5,3,6,9,8]
+  
   arr.forEach(item =>{
 
 item=item+"!"
 newArray.push(item)
-// console.log(item);
+
 
 });
 return newArray
@@ -64,12 +65,9 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 const allUpperCase = (arr) => {
   let newArray=[]
- // let names=["ahmad","essam","naser","amaar"]
  arr.forEach(item=>{
 item=  item.toUpperCase()
 newArray.push(item)
-
-
 })
 return newArray
 
@@ -85,14 +83,12 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
-const greeting = (word) => {
-  let newArray=[]
- word.forEach(item=>{
-   item=item.toUpperCase()+"!"
-   newArray.push(item)
 
- })
- return newArray
+const greeting = (word) => {
+  let newee=[]
+newee.push(word.toUpperCase()+'!')
+return newee
+
 
    // Solution code here...
  };
@@ -100,11 +96,8 @@ const greeting = (word) => {
 
 const speaker = (words, callback) => {
 
-  
   words.forEach(callback);
 
-
- 
   // Solution code here...
 };
 
