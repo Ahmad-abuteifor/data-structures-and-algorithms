@@ -11,10 +11,12 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-const toLastNames = people => {
+const toLastNames = (arr) => {
   // Solution code here...
-let newAray=[1,2,2,3,2]
-  // i will change it asas 
+let newAray=arr.map(item=>{
+   return item.firstName +" " +item.lastName
+})
+return newAray
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,8 +26,14 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
+
 const addValues = (arr) => {
   // Solution code here...
+
+  let newArray=arr.reduce((accum,item)=>{
+    return accum+item 
+  },0)
+  return newArray
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,6 +49,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
+
+  let newArray=arr.reduce((accum,item)=>{
+    return accum+item.purchasePrice
+  },0)
+  return newArray
   // Solution code here...
 };
 
@@ -53,7 +66,12 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
+
+  let newAray=arr.reduce((accum,Number)=>{
+    return (arr.length)
+    },0)
   // Solution code here...
+  return newAray
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,9 +130,17 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+
 const returnNames = (arr) => {
+
+  let newArray=arr.reduce((accum,item,index)=>{
+accum.push(item.name)
+return(accum) 
+  },[])
+  return newArray
   // Solution code here...
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -126,8 +152,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-};
 
+  let newArray=[...str].reduce((accum,charecter)=>{
+    return charecter+accum
+  },'')
+  return newArray
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
