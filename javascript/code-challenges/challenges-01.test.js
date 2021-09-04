@@ -85,22 +85,25 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  let newee=[]
-newee.push(word.toUpperCase()+'!')
-return newee
+  //  let newee=[]
+ return  word.toUpperCase()+'!'
 
 
-   // Solution code here...
+
+    // Solution code here...
+  };
+
+
+  const speaker = (words, callback) => {
+    let newee=[]
+ 
+ words.forEach((item)=>{
+    
+    newee.push(callback(item))
+  })
+ return newee
+ 
  };
-
-
-const speaker = (words, callback) => {
-
-  words.forEach(callback);
-
-  // Solution code here...
-};
-
 speaker(["imprtant","nice","hello","fine"],greeting)
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -120,15 +123,29 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
-};
 
+  return arr.push(value)
+   
+};
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+let newArray =[]
+let i=0;
+while(i<times){
+  callback(arr,num)
+  i++
+}
+
+arr.forEach(item=>{
+  newArray.push(item)
+
+})
+return newArray
 };
 
 /* ------------------------------------------------------------------------------------------------
 
-CHALLENGE 6
+CHALLENGE 6 
 
 Write a function named createList that takes in an array of the current store intentory.
 
@@ -146,8 +163,16 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
-};
+let newArray=[]
 
+availableItems.forEach((item)=>{
+if(item.available===true){
+   newArray.push(item.name)
+}
+
+})
+return newArray
+};
 /* ------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
 
