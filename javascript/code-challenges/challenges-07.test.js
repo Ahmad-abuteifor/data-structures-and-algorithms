@@ -25,7 +25,15 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
+  
+  
+  let newArray = starWarsArr.sort((a, b) => {
+    return b.height - a.height
+  })
+  return newArray;
+
   // Solution code here...
+  
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,8 +44,12 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
-};
 
+  arr.splice(idx, 3);
+
+
+  return arr;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -45,8 +57,13 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
+
   // Solution code here...
-};
+  
+  let str = arr.join(' ');
+
+  return str;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -61,12 +78,19 @@ For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
+
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  
+  
+  for (let i = 0; i <= str.length; i++) {
+    let string = str.slice(i);
+    result.push(string)
+  }
+ 
   return result;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -76,7 +100,13 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
+  let arrayRes = arr.split('')
+
+
+  return arrayRes;
+
   // Solution code here...
+
 };
 
 
@@ -124,6 +154,17 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  
+  let theArray = recipe.ingredients;
+
+
+
+  for (let i = 0; i < theArray.length; i++) {
+    let total = theArray[i].indexOf(" ") + 1;
+    let name = theArray[i].slice(total);
+    let arrIndex = name.indexOf(" ") + 1;
+    result.push(name.slice(arrIndex));
+  }
   return result;
 };
 
