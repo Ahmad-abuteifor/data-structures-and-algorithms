@@ -9,8 +9,8 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
-  i will try soon  
+  let maxArray = arr.reduce((accm, value) => Math.max(accm, value), 0);
+  return maxArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,8 +26,10 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
-  here too 
+  let newObject = Object.keys(obj);
+
+
+  return newObject;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,7 +41,8 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  let newArray = Object.values(obj);
+  return newArray.includes(value);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,9 +63,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ]
 
 ------------------------------------------------------------------------------------------------ */
-
 const updateNumbers = (obj) => {
-  // Solution code here...
+  let firstArray = Object.entries(obj);
+  let secArray = firstArray.map( keyValue => keyValue.join(": "));
+  return secArray;
 };
 
 
@@ -119,6 +123,9 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.map(obj => {
+    houses.push(obj.house)
+  })
   return houses;
 };
 
@@ -135,10 +142,20 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  
+  let returnValue ;
+  arr.map((item) => {
+    if (item.name === character) {
+      if (Object.values(item).includes(item.children)) {
+        returnValue = true;
+      } else {
+        returnValue = false;
+      }
+    }
+  });
+  return returnValue;
 
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
