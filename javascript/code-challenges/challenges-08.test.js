@@ -55,8 +55,16 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
+
+
   // Solution code here...
+ 
+
+    return charArray.sort((a, b) => a.children.length - b.children.length);
+  
+  
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -67,6 +75,9 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
+  str = /w/g.test(str);
+
+  return str;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,17 +94,19 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  input = /[0-9]/gi.test(input);
+  return input;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named containsWorld that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains the word 'world' all in lower-case letters, and false if the input does not.
 
 ------------------------------------------------------------------------------------------------ */
-
 const containsWorld = (input) => {
   // Solution code here...
+  input = /world/g.test(input);
+  return input;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,9 +116,15 @@ Write a function named isCapitalized that takes in a string. This function shoul
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
-
 const isCapitalized = (str) => {
   // Solution code here...
+  const num = /(\b[A-Z].*?\b(.)??)/g;
+  let item = str.match(num);
+  if (item) {
+    return item;
+  } else {
+    return [];
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +135,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    let varyable = /^([A-J][a-zA-Z]+)$/gm.test(arr[i]);
+    if (varyable) {
+      newArray.push(arr[i]);
+    }
+  }
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
