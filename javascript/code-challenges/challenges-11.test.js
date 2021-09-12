@@ -18,11 +18,19 @@ Becomes:
 ]
 ------------------------------------------------------------------------------------------------ */
 
-function transformToLis(obj){
+function transformToLis(obj) {
   // Solution code here...
-// i will doit soon 
-}
+  let firstarray = Object.keys(obj);
 
+  let secArray = Object.values(obj);
+
+  let th3Array = firstarray.map((a, b) => {
+
+    return `<li>${a}: ${secArray[b]}</li>`;
+  });
+
+  return th3Array;
+}
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -32,10 +40,25 @@ Note: You might need to use the same method more than once.
 
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
-
 const count = (target, input) => {
   // Solution code here...
+
+
+  let number  = input.reduce((a, b) => {
+    if (typeof b === 'object') {
+      b.forEach((item) => {
+        if (item === target) {
+          return a++;
+        }
+      });
+    } else if (typeof b === 'number' && b === target) {
+      return a++;
+    }
+    return a;
+  }, 0);
+  return number;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -47,8 +70,17 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
+
 const totalSum = (input) => {
   // Solution code here...
+  let theSum = input.reduce((a, b) => {
+    b.map((number) => {
+      a = a + number;
+      return a;
+    });
+    return a;
+  }, 0);
+  return theSum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,6 +97,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  let newAray = input.map((item) => {
+    if (item) {
+      let filterArray = item.filter((n) => typeof n === 'number' && n % 5 === 0);
+      return filterArray.map((m) => {
+        return Math.pow(2, m);
+      });
+    } else if (!item) {
+      return item;
+    }
+  });
+  return newAray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,8 +172,22 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+
+
+
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  let newArray = data.filter((obj) => {
+    if (obj.gender === 'male' || obj.gender === 'female') {
+      return obj;
+    }
+  });
+
+  let names = newArray.map((item) => {
+    return item.name;
+  });
+
+  return names.join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,6 +198,14 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  let sorted = data.sort((a, b) =>
+    a.height > b.height
+      ? a.height - b.height
+      : a.height < b.height
+        ? b.height - a.height
+        : 0
+  );
+  return sorted[0].name;
 };
 
 /* ------------------------------------------------------------------------------------------------
